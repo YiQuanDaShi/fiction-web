@@ -1,0 +1,17 @@
+
+    <div class="header-tab" id="app_header">
+        <div class="Swipe-tab Swipe-tab_2 f-cb">
+            <a class="Swipe-tab__on" href="javascript:" v-bind:class="{'Swipe-tab__on':tab_1_class_on,'Swipe-tab__off':tab_1_class_off}" @click="tabSwitch(1)">
+                书城
+                <i class="header_i" :style="{transform:'translateX(' + header_postion + 'px)'}"></i>
+            </a>
+            <a href="javascript:" :class="{'Swipe-tab__on':tab_2_class_on}" @click="tabSwitch(2)">书架</a>
+            <!--被js动态操作的属性写到内联style里面-->
+            
+        </div>
+
+         
+        <em class="header-user" ></em>
+        <em class="header-checkin"></em>
+    </div>
+

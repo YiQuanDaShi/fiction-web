@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+        <!--格式检测，不让数字被识别为号码-->
+        <meta name="format-detection" content="telephone=no">
+        <title>书城首页</title>
+        <!--注意：因为app.js里已经配置了静态文件路径 /static 所以这里就不需要再加上 /static 了-->
+        <link rel="stylesheet" type="text/css" href="/css/reset.css">
+        <link rel="stylesheet" type="text/css" href="/css/all.css">
+
+
+    </head>
+    <body>
+        <div id="app">
+            <div id="root" :style="{height: '100%',width: screen_width + 'px',position: 'relative'}">
+                <% include include/header.ejs %>
+                        <div class="container-warp" :style="{transform:'translateX(' + position + 'px)'}">
+                            <div class="container-scroll" :style="{width: screen_width + 'px'}">
+                                <% include include/index-top.ejs %>
+                                <% include include/index-hot.ejs %>
+                                <% include include/index-recommend.ejs %>
+                                <% include include/index-female.ejs %>
+                                <% include include/index-male.ejs %>
+                                <% include include/index-free.ejs %>
+                                <% include include/index-bottom.ejs %>
+                            </div>
+                            <div :style="{'width': screen_width + 'px','margin-left':screen_width + 'px'}" class="index-shelf-right">
+                                <% include include/index-shelf.ejs %>
+                            </div>
+                        </div>          
+    </body>
+    <script src="/script/lib/axios.js"></script>
+    <script src="/script/lib/vue.js"></script>
+    <script src="/script/lib/zepto.min.js"></script>
+    <script src="/script/pages/index.js"></script>
+    
+
+</html>

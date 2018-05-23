@@ -1,0 +1,105 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+        <!--格式检测，不让数字被识别为号码-->
+        <meta name="format-detection" content="telephone=no">
+        <title>书籍详情</title>
+        <!--注意：因为app.js里已经配置了静态文件路径 /static 所以这里就不需要再加上 /static 了-->
+        <link rel="stylesheet" type="text/css" href="/css/reset.css">
+        <link rel="stylesheet" type="text/css" href="/css/book_info.css">
+
+    </head>
+    <body>
+        <div id="app" style="overflow: hidden;" v-cloak>
+            <div v-cloak>
+                    <% include include/common-header.ejs %>
+                    <div class="container-scroll" :style="{height:scroll_height + 'px'}">
+                        <div class="book-page">
+                            <section class="main-card-one">
+                                <div class="u-book -detail">
+                                    <div class="book-cover">
+                                        <img :src="book_cover">
+                                    </div>
+                                    <div class="info">
+                                        <h3 class="title">{{book_name}}</h3>
+                                        <p class="author">
+                                            <a href="javascript:">{{book_author}}</a>
+                                        </p>
+                                        <div class="u-grade">
+                                            <div class="u-grade-star">
+                                                <img src="/img/grade_star.png" :style="{transform: 'translateY(-' + get_star_pos + 'px)'}">
+                                            </div>
+                                            <span class="read">{{book_score_count}}个评价</span>
+                                        </div>
+                                        <p class="price">价格：{{book_price}}书币/千字</p>
+                                        <p class="count">
+                                            字数：{{book_word_count}}字
+                                            <span class="u-booktag -serial">{{isFinish}}</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="main-card-tow">
+                                <div class="book-dash">
+                                    <div class="wrap">
+                                        <ul class="btn-group">
+                                            <a class="u-btn1" :href="'/reader?fiction_id=' + book_fiction_id">
+                                                <span class="book-dash-text">开始阅读</span>
+                                            </a>
+                                            <li class="u-btn2">
+                                                <span class="book-dash-text">下载</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="u-folder">
+                                    <div class="u-cnt" :class="{'u-cnt-overflow':isFold}" @click="book_summary_fold()">
+                                            {{book_summary}}
+                                    </div>
+                                    <div class="folder-tail">
+                                        <div>最新：{{book_latest}}</div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="main-card-three">
+                                <div class="tag-cloud">
+                                    类别标签
+                                </div>
+                                <ul class="tags">
+                                    <li :style="{'background-color': random_color()}" v-for="item in book_categories">
+                                        {{item.label}}
+                                    </li>
+                                </ul>
+                            </section>
+                            <section class="main-card-four">
+                                <p>作者其他图书</p>
+                                <ul class="other-books">
+                                    <li v-for="item in book_author_books">
+                                        <div class="other-books-cover">
+                                            <img :src="item.cover">
+                                        </div>
+                                        <p class="other-books-title">{{item.title}}</p>
+                                    </li>
+                                </ul>
+                            </section>
+                            <section class="main-card-five">
+                                <p>图书信息</p>
+                                <p>版权：{{book_rights}}</p>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+    </body>
+    <script src="/script/lib/axios.js"></script>
+    <script src="/script/lib/vue.js"></script>
+    <script src="/script/lib/zepto.min.js"></script>
+    <script src="/script/pages/book.js"></script>
+    
+
+</html>

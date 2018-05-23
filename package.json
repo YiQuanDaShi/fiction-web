@@ -1,0 +1,19 @@
+{
+  "name": "book_mall",
+  "version": "1.0.0",
+  "description": "web reader site",
+  "main": "app.js",
+  "dependencies": {
+    "ejs": "^2.5.9",
+    "koa": "^2.5.1",
+    "koa-router": "^7.4.0",
+    "koa-static": "^4.0.2",
+    "koa-views": "^6.1.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sunny",
+  "license": "MIT"
+}

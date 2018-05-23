@@ -1,0 +1,90 @@
+<section class="channel-group">
+    <div class="channel-group__header">
+        <h2 class="channel-group__title">本周最火</h2>
+    </div>
+    <ul class="book-table">
+        <li v-for="(item,index) in hot" v-if="index < 3">
+            <div class="u-book">
+                <div class="book-cover">
+                    <a v-bind:href="'/book?id=' + item.fiction_id"><img v-bind:src="item.cover"></a>
+                   
+                </div>
+                <div class="info">
+                    <!--给书籍名称作语义化，便于SEO-->
+                    <h3 class="title">{{item.title}}</h3>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <ul class="book-table">
+        <li v-for="(item,index) in hot" v-if="index > 3 && index < 7">
+            <div class="u-book">
+                <div class="book-cover">
+                        <a v-bind:href="'/book?id=' + item.fiction_id"><img v-bind:src="item.cover"></a>
+                    
+                </div>
+                <div class="info">
+                    <h3 class="title">{{item.title}}</h3>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <a class="channel-group__footer" href="/free">查看更多</a>
+</section>
+
+
+
+
+
+
+<!--
+
+<div class="channel-h5">
+        <div class="channel-h5__header">
+            <p class="channel-h5__title">
+                本周最火
+            </p>
+        </div>
+    
+        <ul class="list-h5">
+            <li>
+                <div class="book-h5">
+                    <div class="book-h5__cover">
+                        <img src="http://cover.read.duokan.com/mfsv2/download/fdsc3/p01W18eqGFfh/LgKEIErAOki8Qm.jpg!s">
+
+                        <p class="book-h5__finish">完结</p>
+                    </div>
+                    <div class="book-h5__info">
+                        <p class="book-h5__title">书名</p>
+                        <p class="book-h5__author">作者</p>
+                        <p class="book-h5__summary">简介</p>
+                        <div class="book-h5__wrap">
+                            <div class="book-h5__tag">都市情缘</div>
+                            <div class="book-h5__tag">热血都市</div>
+                            <div class="book-h5__tag">506万字</div>
+        
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                    <div class="book-h5">
+                        <div class="book-h5__cover">
+                            <img src="http://cover.read.duokan.com/mfsv2/download/fdsc3/p01W18eqGFfh/LgKEIErAOki8Qm.jpg!s">
+    
+                            <p class="book-h5__finish">完结</p>
+                        </div>
+                        <div class="book-h5__info">
+                            <p class="book-h5__title">书名</p>
+                            <p class="book-h5__author">作者</p>
+                            <p class="book-h5__summary">简介</p>
+                            <div class="book-h5__wrap">
+                                <div class="book-h5__tag">都市情缘</div>
+                                <div class="book-h5__tag">热血都市</div>
+                                <div class="book-h5__tag">506万字</div>
+            
+                            </div>
+                        </div>
+                    </div>
+                </li>
+    </div>-->
