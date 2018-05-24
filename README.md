@@ -3,4 +3,4 @@
 
 ###首页
 
-https://github.com/YiQuanDaShi/fiction-web/blob/master/static/img/%E9%A6%96%E9%A1%B5.PNG
+![首页](https://github.com/YiQuanDaShi/fiction-web/blob/master/static/img/%E9%A6%96%E9%A1%B5.PNG)
