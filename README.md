@@ -14,3 +14,8 @@
 * zepto
 * vue
 * koa2
+# 安装和使用
+* clone 或 download到本地
+* cnpm install 安装依赖
+* node app.js 运行
+* 浏览器输入 http://localhost:3000 即可访问
