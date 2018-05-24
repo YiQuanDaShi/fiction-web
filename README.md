@@ -8,9 +8,9 @@
 ![阅读器](https://github.com/YiQuanDaShi/fiction-web/blob/master/static/img/%E5%BC%B9%E5%87%BA%E6%A0%8F.PNG)
 
 # 技术栈
-*HTML5
-*CSS3
-*JavaScript
-*zepto
-*vue
-*koa2
+* HTML5
+* CSS3
+* JavaScript
+* zepto
+* vue
+* koa2
