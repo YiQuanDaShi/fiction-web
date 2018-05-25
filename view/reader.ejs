@@ -995,15 +995,6 @@
 						}
 					});
 
-					//按钮的多态样式效果
-					$('.spe-button').on('touchstart', function() {
-						$(this).css('background', 'rgba(255,255,255,0.3)');
-					}).on('touchmove', function() {
-						$(this).css('background', 'none');
-					}).on('touchend', function() {
-						$(this).css('background', 'none');
-					});
-
 					//字体放大
 					$('#large-font').click(function() {
 						if (InitFontSize > 20) {
@@ -1054,14 +1045,6 @@
 						readerModel.prev();
 						window.scrollTo(0,0);
 					});
-
-					/*
-					//返回上级页面
-					Dom.back_button.click(function() {
-						if (Fiction_id) {
-							location.href = '/book/' + Fiction_id;
-						}
-					});*/
 
 					//返回首页
 					Dom.nav_title.click(function() {
