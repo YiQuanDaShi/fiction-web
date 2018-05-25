@@ -751,7 +751,6 @@
 						back_button : $('#back_button'),
 						top_nav : $('#top-nav'),
 						bottom_nav : $('.bottom_nav'),
-						bottom_chapter_change: $('#bottom_tool_bar_ul'),
 						cur_chapter : $('.cur_chapter'),
 						total_chapters : $('.total_chapters')
 					}
@@ -768,11 +767,6 @@
 					var readerModel = ReaderModel(Fiction_id || 13359, Chapter_id, 
 							function(data) {
 								reader_dom_frame(data);
-								//Dom.bottom_tool_bar.show();
-								//setTimeout(function() {
-								//	ScrollLock = false;
-								//	Screen.scrollTop = 0;
-								//}, 20);
 					});
 					//阅读器数据内容展示
 					readerModel.init();
@@ -821,11 +815,7 @@
 						}
 
 						RootContainer.css('min-height', $(window).height() - 100);
-
-						if (bottomcolor) {
-							$('#bottom_tool_bar_ul').find('li').css('color', bottomcolor);
-						}
-
+						
 						if (color) {
 							$('body').css('background-color', color);
 						}
@@ -839,7 +829,6 @@
 							NightMode = true;
 							$('#day_icon').show();
 							$('#night_icon').hide();
-							$('#bottom_tool_bar_ul').css('opacity', '0.6');
 						}
 
 						//字体设置信息
